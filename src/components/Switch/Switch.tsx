@@ -93,7 +93,11 @@ const PurpleSwitch = withStyles({
   },
 })(Switch);
 
-export const ReSwitch = () => {
+interface ISwitch {
+  background?: string;
+}
+export const ReSwitch = (props: ISwitch) => {
+  const { background } = props;
   return (
     <>
       <PurpleSwitch
@@ -102,6 +106,7 @@ export const ReSwitch = () => {
         color="primary"
         disabled={true}
         disableRipple={true}
+        style={{ background: background }}
       />
       <br />
       <PurpleSwitch size="small" disableRipple={true} />
